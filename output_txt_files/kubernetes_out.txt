@@ -1,1 +1,15 @@
-<paste log output from Kubernetes-mediated prediction, here>
+user@host:~/src/project-ml-microservice-kubernetes> ./run_kubernetes.sh
+deployment.apps/predict created
+NAME                      READY   STATUS              RESTARTS   AGE
+predict-94b86dbd4-xfzcv   0/1     ContainerCreating   0          0s
+service/predict exposed
+error: unable to forward port because pod is not running. Current status=Pending
+
+user@host:~/src/project-ml-microservice-kubernetes> ./run_kubernetes.sh
+error: failed to create deployment: deployments.apps "predict" already exists
+NAME                      READY   STATUS    RESTARTS   AGE
+predict-94b86dbd4-xfzcv   1/1     Running   0          26s
+Error from server (AlreadyExists): services "predict" already exists
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
